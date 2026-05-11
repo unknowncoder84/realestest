@@ -27,7 +27,7 @@ export default function StoryPage() {
           />
         </video>
 
-        {/* Bottom blur fade — blur only, no dark gradient */}
+        {/* Bottom blur fade */}
         <div
           className="absolute inset-0 z-[1] pointer-events-none"
           style={{
@@ -38,14 +38,14 @@ export default function StoryPage() {
           }}
         />
 
-        {/* Navbar — centered vertically over the video, exactly like the screenshot */}
+        {/* Navbar — centered vertically over the video */}
         <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-10">
           <SiteNavbar />
         </div>
       </div>
 
       {/* ══════════════════════════════════════
-          STORY CONTENT
+          STORY CONTENT — solid bg so video never bleeds through
       ══════════════════════════════════════ */}
       <section className="py-16 sm:py-24 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16">

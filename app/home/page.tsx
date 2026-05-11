@@ -53,7 +53,9 @@ export default function HomePage() {
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_094145_4a271a6c-3869-4f1c-8aa7-aeb0cb227994.mp4" type="video/mp4" />
         </video>
-        {/* Bottom blur fade — blur only, no dark gradient */}
+        {/* Solid dark overlay — prevents video bleeding through content on mobile */}
+        <div className="absolute inset-0 bg-black/70" />
+        {/* Bottom blur fade */}
         <div className="absolute inset-0" style={{
           backdropFilter: 'blur(18px)',
           WebkitBackdropFilter: 'blur(18px)',
@@ -67,7 +69,7 @@ export default function HomePage() {
         <SiteNavbar />
 
         {/* Story section */}
-        <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-black">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
             <div>
               <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">
@@ -129,7 +131,7 @@ export default function HomePage() {
         </section>
 
         {/* Page nav */}
-        <div className="px-4 sm:px-6 md:px-12 lg:px-16 py-10 sm:py-12 border-t border-white/10">
+        <div className="px-4 sm:px-6 md:px-12 lg:px-16 py-10 sm:py-12 border-t border-white/10 bg-black">
           <div className="max-w-7xl mx-auto flex justify-end">
             <button onClick={() => router.push('/investing')}
               className="flex items-center gap-2 bg-white text-black px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm">

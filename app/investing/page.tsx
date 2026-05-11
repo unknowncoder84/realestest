@@ -84,10 +84,7 @@ export default function InvestingPage() {
         {/* Liquid glass bottom blur */}
         <div className="absolute inset-0 z-[1] pointer-events-none"
           style={{
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
-            maskImage: 'linear-gradient(to top, black 0%, transparent 40%)',
-            WebkitMaskImage: 'linear-gradient(to top, black 0%, transparent 40%)',
+            background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 40%, transparent 70%)',
           }} />
 
         {/* Investing hero text — bottom-left */}

@@ -45,9 +45,16 @@ export default function StoryPage() {
       </div>
 
       {/* ══════════════════════════════════════
-          STORY CONTENT — solid bg so video never bleeds through
+          STORY CONTENT — video shows through with dark overlay
       ══════════════════════════════════════ */}
-      <section className="py-16 sm:py-24 bg-black text-white">
+      <section className="py-16 sm:py-24 text-white relative">
+        {/* Video bg for content section */}
+        <div className="fixed inset-0 -z-10 pointer-events-none">
+          <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_094145_4a271a6c-3869-4f1c-8aa7-aeb0cb227994.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/55" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
           <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
             <div>
@@ -57,10 +64,10 @@ export default function StoryPage() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5 sm:mb-6">
                 Built on conviction.<br />Driven by purpose.
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-5 sm:mb-6 text-sm sm:text-base">
+              <p className="text-white/80 leading-relaxed mb-5 sm:mb-6 text-sm sm:text-base">
                 Founded in 2002, VEX began as a small advisory boutique with a single belief: that the best investments are made at the intersection of deep insight and bold action. Over two decades, we have grown into a global platform spanning venture capital, real estate development, and strategic consulting.
               </p>
-              <p className="text-gray-400 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
+              <p className="text-white/70 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
                 Our team of 200+ professionals operates across New York, London, Dubai, and Singapore — united by a shared commitment to creating lasting value for our partners, portfolio companies, and communities.
               </p>
               <button
@@ -113,7 +120,7 @@ export default function StoryPage() {
       </section>
 
       {/* Next page CTA */}
-      <div className="bg-black py-12 sm:py-16 px-4 sm:px-6 md:px-12 lg:px-16 border-t border-gray-800">
+      <div className="py-12 sm:py-16 px-4 sm:px-6 md:px-12 lg:px-16 border-t border-white/20">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <p className="text-gray-400 text-sm">Continue exploring VEX</p>
           <button
@@ -133,7 +140,7 @@ export default function StoryPage() {
 
 function Footer() {
   return (
-    <footer className="bg-black text-white py-12 px-6 md:px-12 lg:px-16 border-t border-gray-800">
+    <footer className="text-white py-12 px-4 sm:px-6 md:px-12 lg:px-16 border-t border-white/20 bg-black/40 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-2xl font-bold">VEX</p>
         <p className="text-sm text-gray-500">&copy; 2026 VEX Group. All rights reserved.</p>

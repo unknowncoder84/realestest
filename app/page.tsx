@@ -135,26 +135,21 @@ export default function RootPage() {
         pointerEvents: view === 'home' ? 'auto' : 'none',
         minHeight: '100vh',
       }}>
-        {/* Cinematic video bg — fixed, only shows behind the first hero section */}
+        {/* Cinematic video bg — fixed, visible behind all content */}
         <div className="fixed inset-0 z-0 pointer-events-none">
           <video autoPlay loop muted playsInline
             className="absolute inset-0 w-full h-full object-cover">
             <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260428_193507_4286c423-2fd9-4efd-92bd-91a939453fc1.mp4" type="video/mp4" />
           </video>
-          {/* Dark overlay so video never bleeds through content */}
-          <div className="absolute inset-0 bg-black/60" />
-          <div className="absolute inset-0" style={{
-            backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)',
-            maskImage: 'linear-gradient(to top, black 0%, transparent 45%)',
-            WebkitMaskImage: 'linear-gradient(to top, black 0%, transparent 45%)',
-          }} />
+          {/* Semi-dark overlay — video visible but text always readable */}
+          <div className="absolute inset-0 bg-black/55" />
         </div>
 
         <div className="relative z-10 text-white">
           <SiteNavbar />
 
           {/* ── HERO INTRO ── */}
-          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-black">
+          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-3xl mb-12 sm:mb-20">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4 sm:mb-5">
@@ -244,7 +239,7 @@ export default function RootPage() {
           </section>
 
           {/* ── WHAT WE DO ── */}
-          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#0d0d0d]">
+          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-black/30 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto">
               <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
                 <span className="text-xs tracking-widest uppercase text-gray-400 font-semibold mb-3 block">Our Platform</span>
@@ -309,7 +304,7 @@ export default function RootPage() {
           </section>
 
           {/* ── FEATURED PROPERTIES ── */}
-          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-black">
+          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="flex items-end justify-between mb-8 sm:mb-12">
                 <div>
@@ -355,7 +350,7 @@ export default function RootPage() {
           </section>
 
           {/* ── GLOBAL PRESENCE ── */}
-          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#0d0d0d]">
+          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-black/30 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
                 <div>
@@ -410,7 +405,7 @@ export default function RootPage() {
           </section>
 
           {/* ── LEADERSHIP ── */}
-          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-black">
+          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16">
             <div className="max-w-7xl mx-auto">
               <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
                 <span className="text-xs tracking-widest uppercase text-gray-400 font-semibold mb-3 block">
@@ -439,7 +434,7 @@ export default function RootPage() {
           </section>
 
           {/* ── CTA BANNER ── */}
-          <section className="py-14 sm:py-20 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#0d0d0d]">
+          <section className="py-14 sm:py-20 px-4 sm:px-6 md:px-12 lg:px-16 bg-black/30 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto">
               <div className="rounded-2xl border border-white/15 bg-white/5 p-8 sm:p-12 md:p-16 text-center">
                 <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4" style={{ letterSpacing: '-0.02em' }}>
@@ -463,7 +458,7 @@ export default function RootPage() {
           </section>
 
           {/* ── PAGE NAV ── */}
-          <div className="px-4 sm:px-6 md:px-12 lg:px-16 py-10 sm:py-12 border-t border-white/10 bg-black">
+          <div className="px-4 sm:px-6 md:px-12 lg:px-16 py-10 sm:py-12 border-t border-white/10">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
               <p className="text-sm text-gray-500">Continue exploring VEX</p>
               <button onClick={() => router.push('/investing')}
@@ -474,7 +469,7 @@ export default function RootPage() {
           </div>
 
           {/* ── FOOTER ── */}
-          <footer className="border-t border-white/10 py-10 sm:py-12 px-4 sm:px-6 md:px-12 lg:px-16 bg-black">
+          <footer className="border-t border-white/10 py-10 sm:py-12 px-4 sm:px-6 md:px-12 lg:px-16 bg-black/40 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-8 sm:mb-10">
                 <div className="col-span-2 md:col-span-2">

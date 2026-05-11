@@ -67,29 +67,29 @@ export default function HomePage() {
         <SiteNavbar />
 
         {/* Story section */}
-        <section className="py-24 px-6 md:px-12 lg:px-16">
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
             <div>
               <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">
                 <BookOpen size={14} /> Our Story
               </span>
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5 sm:mb-6">
                 Built on conviction.<br />Driven by purpose.
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-gray-300 leading-relaxed mb-5 sm:mb-6 text-sm sm:text-base">
                 Founded in 2002, VEX began as a small advisory boutique with a single belief: that the best investments are made at the intersection of deep insight and bold action. Over two decades, we have grown into a global platform spanning venture capital, real estate development, and strategic consulting.
               </p>
-              <p className="text-gray-300 leading-relaxed mb-8">
+              <p className="text-gray-300 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
                 Our team of 200+ professionals operates across New York, London, Dubai, and Singapore — united by a shared commitment to creating lasting value for our partners, portfolio companies, and communities.
               </p>
               <button onClick={() => router.push('/investing')}
-                className="inline-flex items-center gap-2 bg-white text-black px-7 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                className="inline-flex items-center gap-2 bg-white text-black px-6 sm:px-7 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm sm:text-base">
                 See what we invest in <ArrowRight size={16} />
               </button>
             </div>
 
             {/* Timeline */}
-            <div className="space-y-6">
+            <div className="space-y-5 sm:space-y-6 mt-8 lg:mt-0">
               {[
                 { year: '2002', title: 'Founded in New York',   desc: 'Started as a boutique M&A advisory firm with 5 partners.' },
                 { year: '2008', title: 'Launched VEX Capital',  desc: 'Expanded into direct investing through our first $200M fund.' },
@@ -97,15 +97,15 @@ export default function HomePage() {
                 { year: '2020', title: 'VEX Build Division',    desc: 'Launched our real estate development arm across 3 continents.' },
                 { year: '2024', title: '$4B+ AUM Milestone',    desc: 'Crossed $4 billion in assets under management.' },
               ].map((item, i, arr) => (
-                <div key={i} className="flex gap-6 group">
+                <div key={i} className="flex gap-5 sm:gap-6 group">
                   <div className="flex flex-col items-center">
                     <div className="w-2 h-2 rounded-full bg-white mt-1.5 group-hover:bg-gray-300 transition" />
                     {i < arr.length - 1 && <div className="w-px flex-1 bg-white/20 mt-1" />}
                   </div>
                   <div className="pb-4">
                     <span className="text-xs text-gray-400 font-mono">{item.year}</span>
-                    <p className="font-semibold text-white mt-0.5">{item.title}</p>
-                    <p className="text-sm text-gray-400 mt-1">{item.desc}</p>
+                    <p className="font-semibold text-white mt-0.5 text-sm sm:text-base">{item.title}</p>
+                    <p className="text-xs sm:text-sm text-gray-400 mt-1">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -113,7 +113,7 @@ export default function HomePage() {
           </div>
 
           {/* Stats */}
-          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-white/10">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-8 mt-14 sm:mt-20 pt-10 sm:pt-12 border-t border-white/10">
             {[
               { value: '$4.2B+', label: 'Assets Under Management' },
               { value: '120+',   label: 'Portfolio Companies'     },
@@ -121,18 +121,18 @@ export default function HomePage() {
               { value: '22 yrs', label: 'Industry Experience'     },
             ].map((s, i) => (
               <div key={i}>
-                <p className="text-3xl font-bold mb-1">{s.value}</p>
-                <p className="text-sm text-gray-400">{s.label}</p>
+                <p className="text-2xl sm:text-3xl font-bold mb-1">{s.value}</p>
+                <p className="text-xs sm:text-sm text-gray-400">{s.label}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Page nav */}
-        <div className="px-6 md:px-12 lg:px-16 py-12 border-t border-white/10">
+        <div className="px-4 sm:px-6 md:px-12 lg:px-16 py-10 sm:py-12 border-t border-white/10">
           <div className="max-w-7xl mx-auto flex justify-end">
             <button onClick={() => router.push('/investing')}
-              className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+              className="flex items-center gap-2 bg-white text-black px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm">
               Investing <ArrowRight size={16} />
             </button>
           </div>

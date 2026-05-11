@@ -91,21 +91,21 @@ export default function InvestingPage() {
           }} />
 
         {/* Investing hero text — bottom-left */}
-        <div className="absolute bottom-0 left-0 z-10 w-full max-w-2xl px-6 md:px-12 pb-12 md:pb-16 pointer-events-none">
+        <div className="absolute bottom-0 left-0 z-10 w-full max-w-2xl px-4 sm:px-6 md:px-12 pb-10 sm:pb-16 pointer-events-none">
           <span
-            className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-white/50 mb-5"
+            className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-white/50 mb-4 sm:mb-5"
             style={{ animation: 'investFadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s both' }}
           >
             <TrendingUp size={13} /> Investing
           </span>
           <h1
-            className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-4"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-3 sm:mb-4"
             style={{ letterSpacing: '-0.03em', animation: 'investFadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.35s both' }}
           >
             Capital deployed<br />with conviction.
           </h1>
           <p
-            className="text-white/60 text-lg font-light max-w-xl leading-relaxed"
+            className="text-white/60 text-sm sm:text-lg font-light max-w-xl leading-relaxed"
             style={{ animation: 'investFadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.5s both' }}
           >
             We invest across stages and sectors — from seed-stage technology companies to large-scale real estate and infrastructure projects.
@@ -121,19 +121,19 @@ export default function InvestingPage() {
       `}</style>
 
       {/* Pillars */}
-      <section className="py-24 px-6 md:px-12 lg:px-16 bg-black text-white">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-black text-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12">Our Investment Pillars</h2>
-          <div className="grid md:grid-cols-3 gap-6 mb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">Our Investment Pillars</h2>
+          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-14 sm:mb-20">
             {[
               { title: 'Venture Capital', stage: 'Seed → Series B',    desc: 'We back exceptional founders building category-defining companies in fintech, proptech, climate, and enterprise software.', metrics: ['$800M deployed','60+ portfolio cos','12 unicorns'] },
               { title: 'Growth Equity',   stage: 'Series C → Pre-IPO', desc: 'Partnering with proven businesses ready to scale globally. We bring capital, networks, and operational expertise.',           metrics: ['$1.4B deployed','35 companies','4 IPOs'] },
               { title: 'Real Assets',     stage: 'Direct & Co-invest',  desc: 'Strategic investments in commercial real estate, infrastructure, and natural resources across key global markets.',             metrics: ['$2B+ portfolio','18 markets','95% occupancy'] },
             ].map((p, i) => (
-              <div key={i} className="border border-white/10 rounded-2xl p-8 hover:border-white/25 transition-colors bg-white/5">
+              <div key={i} className="border border-white/10 rounded-2xl p-6 sm:p-8 hover:border-white/25 transition-colors bg-white/5">
                 <span className="text-xs font-mono text-gray-400 bg-white/10 px-2 py-1 rounded mb-4 inline-block">{p.stage}</span>
-                <h3 className="text-xl font-bold mb-3 text-white">{p.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">{p.desc}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 text-white">{p.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-5 sm:mb-6">{p.desc}</p>
                 <div className="space-y-2 pt-4 border-t border-white/10">
                   {p.metrics.map((m, j) => (
                     <div key={j} className="flex items-center gap-2 text-sm text-gray-400">
@@ -146,8 +146,8 @@ export default function InvestingPage() {
           </div>
 
           {/* Portfolio */}
-          <h2 className="text-3xl font-bold mb-8 text-white">Featured Portfolio</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-white">Featured Portfolio</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-14 sm:mb-20">
             {[
               { name: 'NovaPay',    sector: 'Fintech',         stage: 'Series B' },
               { name: 'Arcadia RE', sector: 'Proptech',        stage: 'Growth'   },
@@ -158,28 +158,28 @@ export default function InvestingPage() {
               { name: 'SkyBridge',  sector: 'Infrastructure',  stage: 'Growth'   },
               { name: 'EcoCore',    sector: 'Climate',         stage: 'Series B' },
             ].map((co, i) => (
-              <div key={i} className="bg-white/5 rounded-xl p-5 border border-white/10 hover:bg-white/10 transition cursor-pointer">
-                <div className="w-8 h-8 bg-white/20 rounded-lg mb-3" />
-                <p className="font-semibold text-sm text-white">{co.name}</p>
+              <div key={i} className="bg-white/5 rounded-xl p-4 sm:p-5 border border-white/10 hover:bg-white/10 transition cursor-pointer">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 rounded-lg mb-2 sm:mb-3" />
+                <p className="font-semibold text-xs sm:text-sm text-white">{co.name}</p>
                 <p className="text-xs text-gray-400 mt-0.5">{co.sector} · {co.stage}</p>
               </div>
             ))}
           </div>
 
           {/* Stats */}
-          <div className="bg-white/5 border border-white/10 text-white rounded-2xl p-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="bg-white/5 border border-white/10 text-white rounded-2xl p-6 sm:p-12 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {[{ value:'$4.2B+',label:'Total AUM'},{value:'120+',label:'Portfolio Companies'},{value:'16',label:'Unicorns'},{value:'38',label:'Countries'}].map((s,i)=>(
-              <div key={i}><p className="text-3xl font-bold mb-1">{s.value}</p><p className="text-sm text-gray-400">{s.label}</p></div>
+              <div key={i}><p className="text-2xl sm:text-3xl font-bold mb-1">{s.value}</p><p className="text-xs sm:text-sm text-gray-400">{s.label}</p></div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Page nav */}
-      <div className="py-12 px-6 md:px-12 lg:px-16 border-t border-white/10 bg-black">
+      <div className="py-10 sm:py-12 px-4 sm:px-6 md:px-12 lg:px-16 border-t border-white/10 bg-black">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <button onClick={() => router.push('/')} className="text-sm text-gray-400 hover:text-white transition-colors">← Story</button>
-          <button onClick={() => router.push('/building')} className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">Building <ArrowRight size={16} /></button>
+          <button onClick={() => router.push('/building')} className="flex items-center gap-2 bg-white text-black px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm">Building <ArrowRight size={16} /></button>
         </div>
       </div>
 

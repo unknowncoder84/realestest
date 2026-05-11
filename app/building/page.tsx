@@ -49,16 +49,16 @@ export default function BuildingPage() {
         <div className="absolute inset-0 bg-black/40 z-[1] pointer-events-none" />
 
         {/* Building hero text — bottom-left */}
-        <div className="absolute bottom-0 left-0 z-10 w-full max-w-2xl px-6 md:px-12 pb-12 md:pb-16 pointer-events-none">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase mb-5"
+        <div className="absolute bottom-0 left-0 z-10 w-full max-w-2xl px-4 sm:px-6 md:px-12 pb-10 sm:pb-16 pointer-events-none">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase mb-4 sm:mb-5"
             style={{ color: 'hsl(119,99%,46%)', animation: 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s both' }}>
             <Building2 size={13} /> Building
           </span>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-4"
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-3 sm:mb-4"
             style={{ letterSpacing: '-0.03em', animation: 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.35s both' }}>
             Developing spaces<br />that inspire.
           </h1>
-          <p className="text-white/60 text-lg font-light max-w-xl leading-relaxed"
+          <p className="text-white/60 text-sm sm:text-lg font-light max-w-xl leading-relaxed"
             style={{ animation: 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.5s both' }}>
             Landmark commercial, residential, and mixed-use properties across global gateway cities.
           </p>
@@ -85,10 +85,10 @@ export default function BuildingPage() {
       `}</style>
 
       {/* Projects */}
-      <section className="py-24 px-6 md:px-12 lg:px-16 bg-[#0a0a0a] text-white">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-[#0a0a0a] text-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12">Active Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">Active Projects</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-14 sm:mb-20">
             {[
               { name: 'One Meridian Tower',  location: 'New York, USA', type: 'Commercial',  status: 'Completed',          sqft: '1.2M sq ft' },
               { name: 'The Crescent',        location: 'Dubai, UAE',    type: 'Mixed-Use',   status: 'Under Construction', sqft: '800K sq ft'  },
@@ -98,7 +98,7 @@ export default function BuildingPage() {
               { name: 'Pacific Hub',         location: 'Sydney, AU',    type: 'Commercial',  status: 'Completed',          sqft: '550K sq ft'  },
             ].map((proj, i) => (
               <div key={i} className="group cursor-pointer border border-white/10 rounded-2xl overflow-hidden hover:border-white/25 transition-colors bg-white/5">
-                <div className="bg-gray-100 h-52 relative">
+                <div className="bg-gray-100 h-40 sm:h-52 relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300" />
                   <div className="absolute bottom-4 left-4">
                     <span className={`text-xs px-2 py-1 rounded font-medium ${
@@ -108,9 +108,9 @@ export default function BuildingPage() {
                     }`}>{proj.status}</span>
                   </div>
                 </div>
-                <div className="p-5">
-                  <h3 className="font-semibold mb-1 text-white">{proj.name}</h3>
-                  <p className="text-sm text-gray-400">{proj.location} · {proj.type}</p>
+                <div className="p-4 sm:p-5">
+                  <h3 className="font-semibold mb-1 text-white text-sm sm:text-base">{proj.name}</h3>
+                  <p className="text-xs sm:text-sm text-gray-400">{proj.location} · {proj.type}</p>
                   <p className="text-xs text-gray-500 mt-1">{proj.sqft}</p>
                 </div>
               </div>
@@ -118,19 +118,19 @@ export default function BuildingPage() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-t border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-8 py-10 sm:py-12 border-t border-white/10">
             {[{value:'6.5M',label:'Sq ft developed'},{value:'$3.1B',label:'Total project value'},{value:'24',label:'Active projects'},{value:'12',label:'Cities worldwide'}].map((s,i)=>(
-              <div key={i}><p className="text-3xl font-bold mb-1 text-white">{s.value}</p><p className="text-sm text-gray-400">{s.label}</p></div>
+              <div key={i}><p className="text-2xl sm:text-3xl font-bold mb-1 text-white">{s.value}</p><p className="text-xs sm:text-sm text-gray-400">{s.label}</p></div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Page nav */}
-      <div className="py-12 px-6 md:px-12 lg:px-16 border-t border-white/10 bg-[#0a0a0a]">
+      <div className="py-10 sm:py-12 px-4 sm:px-6 md:px-12 lg:px-16 border-t border-white/10 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <button onClick={() => router.push('/investing')} className="text-sm text-gray-400 hover:text-white transition-colors">← Investing</button>
-          <button onClick={() => router.push('/advisory')} className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">Advisory <ArrowRight size={16} /></button>
+          <button onClick={() => router.push('/advisory')} className="flex items-center gap-2 bg-white text-black px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors text-sm">Advisory <ArrowRight size={16} /></button>
         </div>
       </div>
 

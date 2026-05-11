@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
-import { Search, User, Menu, X } from 'lucide-react'
+import { Search, Menu, X } from 'lucide-react'
 
 const LINKS = [
   { label: 'Story',     path: '/home'      },
@@ -19,8 +19,14 @@ export default function SiteNavbar() {
   return (
     <nav className="w-full bg-white/95 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16 py-3 sm:py-4 flex items-center justify-between">
-        <button onClick={() => router.push('/')} className="text-xl sm:text-2xl font-bold tracking-tight text-black hover:opacity-70 transition-opacity">VEX</button>
 
+        {/* Logo */}
+        <button onClick={() => router.push('/')}
+          className="text-xl sm:text-2xl font-bold tracking-tight text-black hover:opacity-70 transition-opacity">
+          VEX
+        </button>
+
+        {/* Desktop nav links */}
         <div className="hidden md:flex gap-6 lg:gap-8">
           {LINKS.map(l => (
             <button key={l.label} onClick={() => router.push(l.path)}
@@ -30,22 +36,24 @@ export default function SiteNavbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          <button className="hidden md:flex items-center gap-2 border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-600 hover:border-black hover:text-black transition-colors">
+        {/* Desktop right actions */}
+        <div className="hidden md:flex items-center gap-2 sm:gap-3">
+          <button className="flex items-center gap-2 border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-600 hover:border-black hover:text-black transition-colors">
             <Search size={14} /> Search
           </button>
-          <button className="hidden md:flex w-9 h-9 rounded-full border border-gray-200 items-center justify-center text-gray-600 hover:border-black transition-colors">
-            <User size={15} />
-          </button>
-          <button onClick={() => router.push('/advisory')} className="hidden md:block bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors">
+          <button onClick={() => router.push('/advisory')}
+            className="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors">
             Start a Chat
           </button>
-          <button className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" onClick={() => setOpen(!open)}>
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
         </div>
+
+        {/* Mobile hamburger */}
+        <button className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" onClick={() => setOpen(!open)}>
+          {open ? <X size={20} /> : <Menu size={20} />}
+        </button>
       </div>
 
+      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-1">
           {LINKS.map(l => (
@@ -54,7 +62,16 @@ export default function SiteNavbar() {
               {l.label}
             </button>
           ))}
-          <button onClick={() => { router.push('/advisory'); setOpen(false) }} className="mt-2 bg-black text-white px-5 py-3 rounded-lg text-sm font-medium w-full">Start a Chat</button>
+          {/* Search + Start a Chat visible on mobile too */}
+          <div className="flex gap-2 mt-3">
+            <button className="flex-1 flex items-center justify-center gap-2 border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-600 hover:border-black hover:text-black transition-colors">
+              <Search size={14} /> Search
+            </button>
+            <button onClick={() => { router.push('/advisory'); setOpen(false) }}
+              className="flex-1 bg-black text-white px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors">
+              Start a Chat
+            </button>
+          </div>
         </div>
       )}
     </nav>

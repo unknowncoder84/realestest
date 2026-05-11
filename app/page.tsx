@@ -149,7 +149,7 @@ export default function RootPage() {
           <SiteNavbar />
 
           {/* ── HERO INTRO ── */}
-          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16">
+          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-black/20 backdrop-blur-[2px]">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-3xl mb-12 sm:mb-20">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4 sm:mb-5">
@@ -304,7 +304,7 @@ export default function RootPage() {
           </section>
 
           {/* ── FEATURED PROPERTIES ── */}
-          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16">
+          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-black/20 backdrop-blur-[2px]">
             <div className="max-w-7xl mx-auto">
               <div className="flex items-end justify-between mb-8 sm:mb-12">
                 <div>
@@ -405,7 +405,7 @@ export default function RootPage() {
           </section>
 
           {/* ── LEADERSHIP ── */}
-          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16">
+          <section className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16 bg-black/20 backdrop-blur-[2px]">
             <div className="max-w-7xl mx-auto">
               <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
                 <span className="text-xs tracking-widest uppercase text-gray-400 font-semibold mb-3 block">
@@ -458,7 +458,7 @@ export default function RootPage() {
           </section>
 
           {/* ── PAGE NAV ── */}
-          <div className="px-4 sm:px-6 md:px-12 lg:px-16 py-10 sm:py-12 border-t border-white/10">
+          <div className="px-4 sm:px-6 md:px-12 lg:px-16 py-10 sm:py-12 border-t border-white/10 bg-black/30 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
               <p className="text-sm text-gray-500">Continue exploring VEX</p>
               <button onClick={() => router.push('/investing')}
